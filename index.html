@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kalender Acara</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b7cee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#192433",
+                        "text-secondary-light": "#64748b",
+                        "text-secondary-dark": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen relative pb-24 font-display transition-colors duration-200">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-30 bg-background-light dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center px-4 py-3 justify-between">
+<h2 class="text-xl font-bold leading-tight tracking-tight flex-1">Kalender Acara</h2>
+<div class="flex items-center justify-end gap-2">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-white" style="font-size: 24px;">search</span>
+</button>
+<button class="flex items-center justify-center p-2 text-primary hover:text-blue-400 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 32px; font-weight: 600;">add_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Calendar Widget -->
+<section class="px-4 py-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between mb-2">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300" style="font-size: 20px;">chevron_left</span>
+</button>
+<p class="text-base font-bold leading-tight">Oktober 2024</p>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-300" style="font-size: 20px;">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-y-1">
+<!-- Day Labels -->
+<div class="text-center text-[13px] font-semibold text-text-secondary-light dark:text-text-secondary-dark py-2">M</div>
+<div class="text-center text-[13px] font-semibold text-text-secondary-light dark:text-text-secondary-dark py-2">S</div>
+<div class="text-center text-[13px] font-semibold text-text-secondary-light dark:text-text-secondary-dark py-2">S</div>
+<div class="text-center text-[13px] font-semibold text-text-secondary-light dark:text-text-secondary-dark py-2">R</div>
+<div class="text-center text-[13px] font-semibold text-text-secondary-light dark:text-text-secondary-dark py-2">K</div>
+<div class="text-center text-[13px] font-semibold text-text-secondary-light dark:text-text-secondary-dark py-2">J</div>
+<div class="text-center text-[13px] font-semibold text-text-secondary-light dark:text-text-secondary-dark py-2">S</div>
+<!-- Calendar Days (Assuming Oct 2024, starts Tuesday) -->
+<!-- Empty slots for Sun, Mon -->
+<span></span><span></span>
+<!-- Days 1-31 -->
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">1</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">2</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">3</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">4</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">5</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">6</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">7</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">8</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">9</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">10</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">11</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">12</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">13</button>
+<!-- Selected Date -->
+<button class="h-10 w-full flex items-center justify-center relative">
+<div class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 font-bold">14</div>
+<div class="absolute bottom-1 h-1 w-1 rounded-full bg-white"></div>
+</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">15</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">16</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">17</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">18</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">19</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">20</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">21</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">22</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">23</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">24</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">25</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">26</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">27</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">28</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">29</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">30</button>
+<button class="h-10 w-full flex items-center justify-center text-sm font-medium rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">31</button>
+</div>
+</div>
+</section>
+<!-- Sticky Date Header -->
+<div class="sticky top-[69px] z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md px-4 py-3 border-y border-slate-200 dark:border-slate-800">
+<h3 class="text-base font-bold leading-tight tracking-[-0.015em] text-slate-800 dark:text-white">Hari Ini - Senin, 14 Oktober</h3>
+</div>
+<!-- Event List -->
+<main class="flex flex-col gap-6 p-4">
+<!-- Card 1 -->
+<div class="relative pl-4 group">
+<!-- Timeline Line -->
+<div class="absolute left-0 top-2 bottom-[-24px] w-0.5 bg-slate-200 dark:bg-slate-800 group-last:bottom-0"></div>
+<div class="absolute left-[-4px] top-2 h-2.5 w-2.5 rounded-full border-2 border-primary bg-background-light dark:bg-background-dark"></div>
+<div class="flex flex-col gap-2 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Work</span>
+<h4 class="text-lg font-bold leading-tight">Daily Standup</h4>
+<div class="flex items-center gap-1.5 text-text-secondary-light dark:text-text-secondary-dark text-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-mono">08:00 - 09:00</span>
+</div>
+</div>
+<button class="flex h-8 items-center justify-center rounded-lg bg-primary text-white px-4 text-xs font-bold hover:bg-blue-600 transition-colors">
+                        Join
+                    </button>
+</div>
+<!-- Footer / Attendees -->
+<div class="mt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<div class="flex items-center gap-1 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+<span>Zoom Meeting</span>
+</div>
+<div class="flex -space-x-2">
+<img alt="Portrait of a female colleague" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" data-alt="Portrait of a female colleague" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHJKyXvSvrm_Pjja7XhfxjUjpZl2axmqDyUTdosFVvabS0DwwQcMy3Dv4yaoInosSjNNHXGdMQ12O-lSY1Oh5qdpcOnbXI-H2mfE3deLfgBQdX2a_nZvL5UeH8H2d3QeK_ZI48VPY7KTkFLy_IsxmMmqfrhZWA0kOD9BHxQFvrXX3BxXhIqDpiYmu2RNKYOT2B0vd1SwUqwmGmTUtfut-LMb5kr_NND45A0e7YYM3xSKKFILPEcVcnfE7Y4t0CYi8cvb2o0__AYJlY"/>
+<img alt="Portrait of a male colleague" class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover" data-alt="Portrait of a male colleague" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf_-mxAjW9zH2zRnyAjCaSOlfGGY0tG8A8XvjSrtmsJpj-9NGW5zKhfucjaXKsQyvtqsK3210PqrvtsOjNIkNq1THC4551k1bP9C3QOqtzP0kySJt3uYRLKzSjj2WeGjNDMJpG7iAOK6pZaaqNBo0PPDBmlMyseVDP8xFOvwqOvIwEQ3pT6ScHS9eKT4wb6UoJVraA5HTbnPhWJeqS34zSVazRbIcWf6kf1J_JYpGrzkmgOx8fPq1ka6fg4cZ2kVVoWpMTJ52saCwq"/>
+<div class="flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 ring-2 ring-white dark:ring-surface-dark text-[10px] font-bold text-slate-600 dark:text-slate-300">+3</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative pl-4 group">
+<!-- Timeline Line -->
+<div class="absolute left-0 top-2 bottom-[-24px] w-0.5 bg-slate-200 dark:bg-slate-800 group-last:bottom-0"></div>
+<div class="absolute left-[-4px] top-2 h-2.5 w-2.5 rounded-full border-2 border-green-500 bg-background-light dark:bg-background-dark"></div>
+<div class="flex flex-col gap-3 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-green-500 uppercase tracking-wider">Personal</span>
+<h4 class="text-lg font-bold leading-tight">Makan Siang Tim</h4>
+<div class="flex items-center gap-1.5 text-text-secondary-light dark:text-text-secondary-dark text-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-mono">12:30 - 13:30</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1 text-sm text-text-secondary-light dark:text-text-secondary-dark mb-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Restoran Padang Sederhana</span>
+</div>
+<div class="w-full h-32 rounded-lg bg-cover bg-center" data-alt="Delicious pizza on a wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3PcTlwIZ-DDTsQ3ZYFxisi7sKdvkUE1jmS2RWoncUhshEeXOwWV0dQ_3Kcp2iHHW332QrRUxOgBbSMB9WItcu3MUO-AE-hqbpVrbsY9gP1kiEMpWoAoz7KJoIP18M90gzx2lK3qW6F3WWRlsvYK1cDWuiQs77mU_ljhFiPr7CrGCBzqRFGwp7IVR13mzpe-hW4pVUJgH0CGYxyiVbf1NePW3ssGfTRe6yLqLhtovnF1YoTPpld8M-tOhOLvsATsz_aRn-KoAC1whI');"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative pl-4 group">
+<!-- Timeline Line -->
+<div class="absolute left-0 top-2 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-800 group-last:bg-transparent"></div>
+<div class="absolute left-[-4px] top-2 h-2.5 w-2.5 rounded-full border-2 border-primary bg-background-light dark:bg-background-dark"></div>
+<div class="flex flex-col gap-2 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Work</span>
+<h4 class="text-lg font-bold leading-tight">Review Proyek</h4>
+<div class="flex items-center gap-1.5 text-text-secondary-light dark:text-text-secondary-dark text-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-mono">15:00 - 16:30</span>
+</div>
+</div>
+</div>
+<div class="mt-2 flex items-center justify-between border-t border-slate-100 dark:border-slate-700/50 pt-3">
+<div class="flex items-center gap-1 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+<span>Ruang Meeting A</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom padding for visual breathing room above nav -->
+<div class="h-8"></div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 w-full bg-surface-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 z-50">
+<div class="grid grid-cols-4 h-16 items-center max-w-lg mx-auto">
+<button class="flex flex-col items-center justify-center gap-1 text-primary w-full h-full">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="text-[10px] font-medium">Kalender</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-text-secondary-light dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 w-full h-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-medium">Cari</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-text-secondary-light dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 w-full h-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium">Notifikasi</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-text-secondary-light dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300 w-full h-full transition-colors">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</button>
+</div>
+<!-- Safe area spacing for iOS Home Indicator -->
+<div class="h-[env(safe-area-inset-bottom)] bg-surface-light dark:bg-background-dark"></div>
+</nav>
+</body></html>
